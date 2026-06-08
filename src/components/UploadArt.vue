@@ -2,6 +2,7 @@
   import { ref } from "vue";
 
   import { createArt } from "@/api";
+  import { isPlainText } from "@/utils";
 
   const emit = defineEmits(["close"]);
 
@@ -45,6 +46,11 @@
       return;
     }
 
+    if (isPlainText(form.value.content.trim())) {
+      errors.value.message = "Where art? All I see is words 👀";
+      return;
+    }
+
     uploading.value = true;
 
     try {
@@ -64,7 +70,7 @@
 
       tagInput.value = "";
 
-      location.reload()
+      location.reload();
     } catch (err) {
       console.error(err);
       errors.value.message = err.message || "Failed to upload art";

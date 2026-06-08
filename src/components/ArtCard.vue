@@ -1,20 +1,23 @@
 <template>
   <div
-    class="relative flex items-center justify-center border rounded border-base-content/20 opacity-80 p-4 cursor-pointer active:scale-[0.99] hover:border-primary transition-all"
+    class="p-2 relative flex items-center justify-center border rounded border-base-content/20 opacity-80 cursor-pointer active:scale-[0.99] hover:border-primary transition-all"
     @click="copyArt"
   >
-    <span
-      v-if="copied"
-      class="absolute top-2 right-2 text-xs text-success font-medium badge"
-    >
-      Copied
-    </span>
+    <Transition name="fade-scale">
+      <span
+        v-if="copied"
+        class="absolute top-2 right-2 badge text-xs text-success font-medium"
+      >
+        Copied
+      </span>
+    </Transition>
 
-    <pre class="text-xs whitespace-pre overflow-auto max-h-96">{{
+    <pre class="text-xs whitespace-pre overflow-auto scrollbar-hide max-h-96">{{
       art.content
     }}</pre>
   </div>
 </template>
+
 <script setup>
   import { ref } from "vue";
 

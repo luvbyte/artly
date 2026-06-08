@@ -46,7 +46,7 @@
       <input
         v-model="search"
         class="w-full input input-sm rounded focus:outline-none placeholder:opacity-60"
-        placeholder="Search by tag"
+        placeholder="Search by Tag"
       />
       <div
         v-if="search.length > 0"
@@ -104,9 +104,7 @@
 
     <!-- Arts Grid -->
     <div class="flex-1 overflow-y-auto" ref="scrollContainer">
-      <div
-        class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-      >
+      <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <div
           v-if="!loading && arts.length <= 0"
           class="p-2 opacity-60 text-center"
@@ -126,7 +124,7 @@
         No more arts
       </div>
     </div>
-    
+
     <!-- Upload Art -->
     <Transition name="fade-scale">
       <UploadArt v-if="uploader" @close="uploader = false" />
