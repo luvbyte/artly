@@ -102,10 +102,10 @@
       </button>
     </div>
 
-    <!-- Media Grid -->
+    <!-- Arts Grid -->
     <div class="flex-1 overflow-y-auto" ref="scrollContainer">
       <div
-        class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+        class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
       >
         <div
           v-if="!loading && arts.length <= 0"
@@ -126,6 +126,7 @@
         No more arts
       </div>
     </div>
+    
     <!-- Upload Art -->
     <Transition name="fade-scale">
       <UploadArt v-if="uploader" @close="uploader = false" />

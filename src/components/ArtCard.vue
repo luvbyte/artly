@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative border rounded border-base-content/20 opacity-80 p-4 flex items-center justify-center cursor-pointer active:scale-[0.99] hover:border-primary transition-all"
+    class="relative flex items-center justify-center border rounded border-base-content/20 opacity-80 p-4 cursor-pointer active:scale-[0.99] hover:border-primary transition-all"
     @click="copyArt"
   >
     <span
@@ -10,11 +10,11 @@
       Copied
     </span>
 
-    <pre class="text-xs whitespace-pre-wrap break-all overflow-hidden"
-      >{{ art.content }}</pre>
+    <pre class="text-xs whitespace-pre overflow-auto max-h-96">{{
+      art.content
+    }}</pre>
   </div>
 </template>
-
 <script setup>
   import { ref } from "vue";
 
